@@ -10,8 +10,7 @@ def almostSorted(arr: list) -> None:
     if ascending_check.count(False) <= 4:
         # We first need to check if swapping the elements solves the sort
 
-        # We expect two local minima and two local maxima for a total 4 criteria mismatches.
-        # We need the index of the first maxima and the second minima
+        # We can have up to 4 mismatches depending on swap digit spacing but were only concered with the first maxima and last minima
         maxima_check = [idx - 1 for idx, val in enumerate(buf_list) if idx not in [0, len(buf_list) -1] and buf_list[idx - 1] < val and val > buf_list[idx + 1]]
         minima_check = [idx - 1 for idx, val in enumerate(buf_list) if idx not in [0, len(buf_list) -1] and buf_list[idx - 1] > val and val < buf_list[idx + 1]]
 
